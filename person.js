@@ -1,23 +1,47 @@
+const COLOR_PERSON = '\x1b[31m%s\x1b[0m'; 
+
 class Person {
-    
-    #name = "name por def";
+    #name = "def nombre";
     #age = 0;
 
-    setName(name) {
-        this.#name = name;
-    }
-
-    getName() {
-        return this.#name;
+    getAge() {
+        return this.#age;
     }
 
     setAge(age) {
         this.#age = age;
     }
 
-    getAge() {
-        return this.#age;
+    getName() {
+        return this.#name;
     }
+
+    setName(name) {
+        this.#name = name;
+    }
+
+    speak(msj) {
+        console.log(COLOR_PERSON, msj);
+    }
+
+    interactsWithCar(car) {
+        this.speak(this.getName() + " ages 2 years");
+        this.speak(this.getName() + " buys a " + car.getMake() + " " + car.getModel());
+        car.setMake("Sold");
+        car.setModel("Sold");
+        this.ages();
+    }
+
+    ages() {
+        const newAge = this.getAge() + 2;
+        this.setAge(newAge);
+}
+
 }
 
 module.exports = Person;
+
+
+
+
+

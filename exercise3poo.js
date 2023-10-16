@@ -1,10 +1,9 @@
-const Person = require("./person");
-const Car = require("./car");
-
+const Person = require("./person.js");
+const Car = require("./car.js");
+const COLOR_GREEN = '\x1b[32m%s\x1b[0m';
 
 const person1 = new Person();
 const person2 = new Person();
-
 const car1 = new Car();
 const car2 = new Car();
 
@@ -20,36 +19,35 @@ car1.setModel("Corolla");
 car2.setMake("Ford");
 car2.setModel("Mustang");
 
-console.log("Person 1:");
+console.log(COLOR_GREEN, "Before the transaction:");
+console.log("Person1:");
 console.log("Name:", person1.getName());
 console.log("Age:", person1.getAge());
 
-console.log("Person 2:");
+console.log("Person2:");
 console.log("Name:", person2.getName());
 console.log("Age:", person2.getAge());
 
-console.log("Car 1:");
+console.log("Car1:");
 console.log("Make:", car1.getMake());
 console.log("Model:", car1.getModel());
 
-console.log("Car 2:");
+console.log("Car2:");
 console.log("Make:", car2.getMake());
 console.log("Model:", car2.getModel());
 
-
-/* Interaction and alteration of object states */
-console.log(person1.getName() + " buys a " + car2.getMake() + " " + car2.getModel());
-console.log("Car 2:");
-car2.setMake("Sold"); 
-car2.setModel("Sold");
-console.log("Make:", car2.getMake());
-console.log("Model:", car2.getModel());
-
- 
-console.log(person1.getName() + " ages 5 years");
-person1.setAge(person1.getAge() + 5);
-console.log("Person 1:");
+console.log(COLOR_GREEN, "After the transaction:");
+person1.interactsWithCar(car1);
+console.log("Person1:");
 console.log("Name:", person1.getName());
 console.log("Age:", person1.getAge());
+console.log("Car1:");
+console.log("Make:", car1.getMake());
+console.log("Model:", car1.getModel());
+
+
+
+
+
 
 

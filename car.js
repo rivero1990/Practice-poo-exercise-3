@@ -1,23 +1,24 @@
 class Car {
-    
-    #make = "make por def";
-    #model = "model por def";
-
-    setMake(make) {
-        this.#make = make;
-    }
+    #make = "def marca";
+    #model = "def modelo";
 
     getMake() {
         return this.#make;
     }
 
-    setModel(model) {
-        this.#model = model;
+    setMake(make) {
+        this.#make = make;
     }
 
     getModel() {
         return this.#model;
     }
+
+    setModel(model) {
+        this.#model = model;
+    }
 }
 
 module.exports = Car;
+
+
